@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multistep From</title>
+    <!-- !google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- !css file -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- !link jQuery file -->
+    <script
+      src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      defer
+    ></script>
+    <!-- !js file -->
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <form action="" class="multiStepsForm" method="POST">
+      <ul class="progressBar" id="progressBar">
+        <li class="active">Account Setup</li>
+        <li>Personal Details</li>
+        <li>Social Profiles</li>
+      </ul>
+      <fieldset>
+        <h2 class="title">Create your Account</h2>
+        <h3 class="subtitle"></h3>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="Email Address"
+          autocomplete="on"
+          required
+          autofocus
+        />
+        <input
+          type="password"
+          name="password"
+          id="passwd"
+          placeholder="Password"
+          autocomplete="on"
+          required
+        />
+        <input
+          type="password"
+          name="confirmPasswd"
+          id="confirmPasswd"
+          placeholder="Confirm password"
+          autocomplete="on"
+          required
+        />
+        <button type="button" class="next action-btn">Next</button>
+      </fieldset>
+      <fieldset>
+        <h2 class="title">Personal Details</h2>
+        <h3 class="subtitle">
+          We will never share your personal information
+        </h3>
+        <input
+          type="text"
+          name="fname"
+          id="fname"
+          placeholder="First Name"
+          required
+          autocomplete="on"
+          autofocus
+        />
+        <input
+          type="text"
+          name="lname"
+          id="lname"
+          placeholder="Last Name"
+          required
+          autocomplete="on"
+        />
+        <input
+          type="text"
+          name="phoneNumber"
+          id="phonenumber"
+          placeholder="Phone number"
+          autocomplete="on"
+        />
+        <textarea
+          name="address"
+          id="address"
+          placeholder="Your Address"
+        ></textarea>
+        <button type="button" class="prev action-btn">Previous</button>
+        <button type="button" class="next action-btn">Next</button>
+      </fieldset>
+      <fieldset>
+        <h2 class="title">Social Profiles</h2>
+        <h3 class="subtitle">Your presence on the social network</h3>
+        <input
+          type="text"
+          name="twitter"
+          id="twitterAccount"
+          placeholder="Twitter Username"
+          autofocus
+        />
+        <input
+          type="text"
+          name="facebook"
+          id="facebookAccount"
+          placeholder="Facebook Username"
+        />
+        <input
+          type="text"
+          name="instagram"
+          id="instagramAccount"
+          placeholder="Instagram username"
+        />
+        <button type="button" class="prev action-btn">Previous</button>
+        <button type="submit" class="submit action-btn">Submit</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  height: 100%;
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  background: hsl(16, 100%, 91%);
+  color: hsl(0, 0%, 15%);
+  padding: 2em;
+  overflow: hidden;
+}
+ul {
+  list-style-type: none;
+}
+textarea {
+  resize: vertical;
+}
+.multiStepsForm {
+  height: 100vh;
+  width: 100%;
+  max-width: 40rem;
+  margin: auto;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  position: relative;
+}
+fieldset {
+  width: 80%;
+  background: hsl(0, 0%, 100%);
+  box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.2);
+  border-radius: 0.25rem;
+  margin: 0 auto;
+  padding: 2em 3em;
+  position: relative;
+  border: 0;
+}
+fieldset:not(:first-of-type) {
+  display: none;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 1.5em;
+  border: 1px solid hsl(0, 0%, 58%);
+  outline: 0;
+  border-radius: 0.3rem;
+  margin-bottom: 1em;
+  color: hsl(0, 0%, 46%);
+  font-size: 1.2rem;
+  transition: all 300ms ease-in-out;
+}
+input:focus,
+textarea:focus {
+  color: hsl(0, 0%, 15%);
+  border-color: hsl(174, 99%, 34%);
+  font-size: 1.3rem;
+}
+.action-btn {
+  display: inline-flex;
+  width: 100px;
+  place-content: center;
+  padding: 0.75em 3em;
+  background: hsl(174, 100%, 26%);
+  color: hsl(0, 0%, 100%);
+  margin: 1em 0.5em;
+  font-weight: bold;
+  border: 0;
+  outline: 0;
+  cursor: pointer;
+  transition: all 250ms ease-in-out;
+}
+.action-btn:is(:focus, :hover) {
+  box-shadow: 0 0 0 2px hsl(174, 100%, 27%), 0 0 0 3px hsl(174, 100%, 22%);
+}
+.title {
+  font-weight: 700;
+  color: hsl(0, 0%, 30%);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin-block: 0.5em;
+}
+.subtitle {
+  font-weight: 400;
+  color: hsl(0, 0%, 44%);
+  font-size: 1rem;
+  margin-block: 0 2em;
+}
+.progressBar {
+  margin-bottom: 3em;
+  overflow: hidden;
+  counter-reset: step;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.progressBar li {
+  width: 100%;
+  color: hsl(174, 98%, 22%);
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  position: relative;
+  user-select: none;
+}
+.progressBar li::before {
+  content: counter(step);
+  counter-increment: step;
+  display: block;
+  width: 2rem;
+  line-height: 2rem;
+  font-size: 1.2rem;
+  background: hsl(174, 100%, 26%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 0.3rem;
+  margin: 0 auto 2em auto;
+}
+.progressBar li::after {
+  content: '';
+  position: absolute;
+  top: 1rem;
+  left: -50%;
+  width: 100%;
+  height: 0.2rem;
+  background: hsl(174, 98%, 22%);
+  z-index: -1;
+}
+.progressBar li:first-child::after {
+  content: none;
+}
+li.active {
+  color: hsl(15, 100%, 37%);
+}
+
+li.active::before {
+  background: hsl(15, 100%, 37%);
+  color: hsl(0, 0%, 100%);
+}
+li.active::after {
+  background: hsl(15, 100%, 37%);
+}
+@media (max-width: 400px) {
+  body {
+    overflow: auto;
+  }
+  .action-btn {
+    display: block;
+    width: 100%;
+    padding: 0.75em 0;
+    margin: 1em 0;
+  }
+}
